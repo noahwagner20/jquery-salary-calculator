@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="styles/styles.css" />
 
     </head>
-    <h1>Salary Calculator</h1> <!--added for with button to input employees information-->
+        <h1>Salary Calculator</h1> <!--added form with button to input employees information-->
+<body>
     <form id = 'employeeInfo'>
         <input id = 'firstNameIn' type = "text" placeholder="First Name">
         <input id = 'lastNameIn' type = "text" placeholder="Last Name">
@@ -16,4 +17,20 @@
         <input id = 'salaryIn' type = "text" placeholder="Employee Annual Salary">
         <button id=submitB type =button>Add</button>
     </form>
+
+    <div class = 'table_container'>
+            <table>
+                
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Employee ID</th>
+                        <th>Employee Title</th>
+                        <th>Employee Annual Salary</th>
+                    </tr>
+            <tbody id = "employeeInputs">
+            </tbody>
+        </table>
+    </div>
+</body>
 </html>

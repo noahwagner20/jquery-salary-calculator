@@ -6,7 +6,7 @@ function readyNow() {
 }
 
 function newEmployee() {
-   let firstName = $('firstNameIn').val();
+   let firstName = $('firstNameIn').val(); //getting all values from input fields and setting them as variables
    let lastName = $('lastNameIn').val();
    let employeeID = $('idIn').val();
    let employeeTitle = $('titleIn').val();
@@ -14,4 +14,6 @@ function newEmployee() {
 
    //equation to get monthey expenses
    monthlyExpenses += Number(employeeSalary / 12);
+
+    $
 }

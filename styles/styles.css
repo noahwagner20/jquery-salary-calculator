@@ -1,0 +1,21 @@
+body{
+    background-color:rgb(101, 121, 106);
+    text-align: center;
+}
+table {
+   
+    width: 100%;
+    border: 1px solid black;
+   
+}
+th {
+    border: 1px solid black;
+}
+thead{
+    border:2px;
+}
+.table_container{
+border: solid 5px;
+min-height: 400px;
+
+}
