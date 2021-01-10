@@ -3,6 +3,7 @@ $(document).ready(readyNow);
 function readyNow() {
     console.log('hello world'); //making sure client.js is working
     $('#submitB').on('click' , newEmployee)
+    
 }
 
 function newEmployee() {
@@ -11,9 +12,33 @@ function newEmployee() {
    let employeeID = $('idIn').val();
    let employeeTitle = $('titleIn').val();
    let employeeSalary = $('salaryIn').val();
-
+   
    //equation to get monthey expenses
-   monthlyExpenses += Number(employeeSalary / 12);
+   annualExpenses = Number(employeeSalary);
 
-    $
+    $('#employeeInputs').append ( ` <tr id = 'newRow' data-salary=${employeeSalary}">
+                                    <td>${firstName}</td>   
+                                    <td>${lastName}</td>
+                                    <td>${employeeID}</td>
+                                    <td>${employeeTitle}</td> 
+                                    <td class = employeeSalary> ${employeeSalary}</td>
+                                    <td>
+                                    <button class = 'fire' type =button>Fire Employee</button>
+                                    </td>
+                                    </tr>
+                                `);
+
+    $('#firstNameIn').val(''); //resetting inputs
+    $('#lastNameIn').val('');
+    $('#idIn').val('');
+    $('#titleIn').val('');
+    $('#salaryIn').val('');
+
+    updateList(); //calling update list to do mathsssssss and empty and append new line
+}
+
+function updateList() {
+    let monthly = annualExpenses / 12;
+    $('#monthlyTogether').empty()
+    $('#monthlyTogether').append(monthly.toFixed(2));
 }
