@@ -42,10 +42,11 @@ function updateList() {
     $('#monthlyTogether').empty()
     $('#monthlyTogether').append(monthly.toFixed(2));
 
-    $('#monthlyTogether').append(monthly);
     //turn text red if totalMonthly >= 20000
     if (monthly >= 20000) {
         document.getElementById("monthlyTogether").style.color = '#FF0000';
+    } else {
+        document.getElementById("monthlyTogether").style.color = '#000000';
     }
 }
 
