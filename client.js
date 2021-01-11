@@ -1,5 +1,8 @@
 $(document).ready(readyNow);
 
+const employees = [];
+let annualSalaryTotal = 0;
+
 function readyNow() {
     console.log('hello world'); //making sure client.js is working
     $('#submitB').on('click' , newEmployee)
@@ -14,8 +17,14 @@ function newEmployee() {
    let employeeSalary = $('#salaryIn').val();
    
    //equation to get monthey expenses
-   annualExpenses = Number(employeeSalary);
-
+   
+    let newEmployee = {
+        firstName: firstName,
+        lastName: lastName,
+        employeeID: employeeID,
+        employeeTitle: employeeTitle,
+        employeeSalary: employeeSalary,
+    }
     $('#employeeInputs').append ( ` <tr id = 'newRow' data-salary=${employeeSalary}">
                                     <td>${firstName}</td>   
                                     <td>${lastName}</td>
@@ -28,17 +37,22 @@ function newEmployee() {
                                     </tr>
                                 `);
 
+                                annualSalaryTotal += Number(newEmployee.employeeSalary);
+                                
+                                employees.push(newEmployee);
+                                console.log(newEmployee);
+                                
+                                updateList(); //calling update list to do mathsssssss and empty and append new line
     $('#firstNameIn').val(''); //resetting inputs
     $('#lastNameIn').val('');
     $('#idIn').val('');
     $('#titleIn').val('');
     $('#salaryIn').val('');
 
-    updateList(); //calling update list to do mathsssssss and empty and append new line
-}
+    }
 
 function updateList() {
-    let monthly = annualExpenses / 12;
+    let monthly = annualSalaryTotal / 12;
     $('#monthlyTogether').empty()
     $('#monthlyTogether').append(monthly.toFixed(2));
 
@@ -53,4 +67,3 @@ function updateList() {
 function deleteEmployee() {
     $(this).closest('tr').remove();
 }
-
