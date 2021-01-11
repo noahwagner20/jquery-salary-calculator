@@ -53,3 +53,4 @@ function updateList() {
 function deleteEmployee() {
     $(this).closest('tr').remove();
 }
+
